@@ -86,10 +86,12 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:22px 7%;
+    padding:clamp(10px, 2.5vw, 22px) clamp(3%, 5vw, 7%);
     backdrop-filter:blur(16px);
     background:rgba(2,8,22,0.55);
     border-bottom:1px solid rgba(255,255,255,0.08);
+    flex-wrap:wrap;
+    gap:clamp(10px, 2vw, 20px);
 }
 
 .logo{
@@ -216,7 +218,7 @@ nav{
 
 .hero h1{
     font-family:'Cinzel',serif;
-    font-size:72px;
+    font-size:clamp(32px, 6.5vw, 72px);
     line-height:1.15;
     margin-bottom:28px;
     text-shadow:
@@ -225,7 +227,7 @@ nav{
 }
 
 .hero p{
-    font-size:20px;
+    font-size:clamp(14px, 2.2vw, 20px);
     color:#ddd;
     max-width:760px;
     line-height:1.9;
@@ -313,13 +315,15 @@ nav{
 }
 
 .btn{
-    padding:16px 36px;
+    padding:clamp(10px, 2vw, 16px) clamp(16px, 3vw, 36px);
     border-radius:50px;
     font-weight:600;
     text-decoration:none;
     transition:0.4s;
     position:relative;
     overflow:hidden;
+    font-size:clamp(12px, 1.8vw, 15px);
+    display:inline-block;
 }
 
 .btn-primary{
@@ -382,7 +386,7 @@ nav{
 /* GENERAL */
 
 section{
-    padding:110px 7%;
+    padding:clamp(50px, 8vw, 110px) clamp(3%, 5vw, 7%);
     position:relative;
 }
 
@@ -799,23 +803,142 @@ footer p{
 
 }
 
-@media(max-width:600px){
+@media(max-width:768px){
 
-    .hero h1{
-        font-size:38px;
+    section{
+        padding:clamp(30px, 5vw, 60px) 4%;
     }
 
-    .hero p{
-        font-size:17px;
+    nav{
+        padding:8px 3%;
+    }
+
+    .logo-text{
+        display:none;
+    }
+
+    .hero{
+        padding:90px 4% 40px;
     }
 
     .hero-side{
-        padding:20px;
+        width:100%;
+        margin:0 auto;
+        padding:12px;
+    }
+
+    .about-cards{
+        grid-template-columns:1fr;
+    }
+
+    .founders-card{
+        grid-template-columns:1fr;
+    }
+
+    .founders-image{
+        max-width:180px;
+        margin:0 auto;
+    }
+
+    .service-grid,
+    .program-grid,
+    .impact-grid{
+        grid-template-columns:repeat(2, 1fr);
+        gap:16px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2, 1fr);
+        gap:12px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:clamp(20px, 4vw, 40px) 3%;
+    }
+
+    .section-title{
+        margin-bottom:25px;
+    }
+
+    nav{
+        padding:6px 2%;
+    }
+
+    .nav-links a{
+        padding:4px 6px;
+        font-size:11px;
+    }
+
+    .nav-links a.nav-donate{
+        padding:6px 10px;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:80px 3% 30px;
+    }
+
+    .hero-side{
+        padding:8px;
+        border-radius:12px;
+    }
+
+    .hero-side h3{
+        font-size:13px;
+        margin-bottom:6px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        gap:8px;
     }
 
     .btn{
         width:100%;
         text-align:center;
+        padding:10px 14px;
+    }
+
+    .about-card{
+        padding:10px;
+    }
+
+    .about-card h4{
+        font-size:15px;
+    }
+
+    .service-card{
+        padding:14px 12px;
+    }
+
+    .service-card h3{
+        font-size:16px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2, 1fr);
+        gap:8px;
+    }
+
+    .gallery-item img{
+        min-height:120px;
+    }
+
+    .contact-card{
+        padding:14px;
+    }
+
+    footer{
+        padding:14px 3%;
+        font-size:11px;
     }
 
 }
