@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Liberty House International Faith Ministries</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --gold:#f4c95d;
+    --gold-light:#ffe6a7;
+    --blue:#071b4d;
+    --deep:#020816;
+    --white:#ffffff;
+    --glass:rgba(255,255,255,0.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#020816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(var(--gold),#fff);
+    border-radius:20px;
+}
+
+/* GLOW EFFECTS */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:rgba(244,201,93,0.12);
+    filter:blur(120px);
+    top:-200px;
+    left:-100px;
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:rgba(13,82,255,0.15);
+    filter:blur(140px);
+    right:-200px;
+    bottom:-250px;
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 7%;
+    backdrop-filter:blur(16px);
+    background:rgba(2,8,22,0.55);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:'Cinzel',serif;
+    font-size:30px;
+    font-weight:700;
+    color:var(--gold);
+    letter-spacing:1px;
+    text-shadow:0 0 25px rgba(244,201,93,0.5);
+}
+
+.logo img{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid rgba(244,201,93,0.7);
+    box-shadow:0 0 18px rgba(244,201,93,0.45);
+}
+
+.logo-text{
+    line-height:1;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    transition:0.4s;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    background:var(--gold);
+    left:0;
+    bottom:-5px;
+    transition:0.4s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a.nav-donate{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    line-height:1;
+    background:linear-gradient(135deg,var(--gold),#fff3c2);
+    color:#111;
+    padding:10px 18px;
+    margin-left:6px;
+    border-radius:999px;
+    font-weight:700;
+    box-shadow:0 0 18px rgba(244,201,93,0.45);
+}
+
+.nav-links a.nav-donate::after{
+    display:none;
+}
+
+.nav-links a.nav-donate:hover{
+    color:#111;
+    transform:translateY(-2px);
+    box-shadow:0 0 28px rgba(244,201,93,0.72);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.82)),
+    url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=2000&auto=format&fit=crop') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:120px 7% 80px;
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 40%);
+}
+
+.hero-content{
+    max-width:760px;
+    position:relative;
+    z-index:2;
+    animation:fadeUp 1.2s ease;
+    text-align:left;
+}
+
+.hero-sub{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:14px;
+    margin-bottom:18px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-family:'Cinzel',serif;
+    font-size:72px;
+    line-height:1.15;
+    margin-bottom:28px;
+    text-shadow:
+    0 0 30px rgba(255,255,255,0.12),
+    0 0 60px rgba(244,201,93,0.22);
+}
+
+.hero p{
+    font-size:20px;
+    color:#ddd;
+    max-width:760px;
+    line-height:1.9;
+    margin-bottom:45px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:flex-start;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-layout{
+    width:100%;
+    max-width:none;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:34px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.hero-side{
+    width:min(300px,100%);
+    justify-self:end;
+    padding:18px;
+    background:linear-gradient(165deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+    border:1px solid rgba(255,255,255,0.16);
+    border-radius:24px;
+    box-shadow:0 18px 45px rgba(0,0,0,0.42);
+}
+
+.hero-side h3{
+    font-family:'Cinzel',serif;
+    color:var(--gold-light);
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.hero-side-block{
+    margin-bottom:12px;
+}
+
+.hero-side-block:last-child{
+    margin-bottom:0;
+}
+
+.hero-side-title{
+    font-weight:700;
+    color:white;
+    margin-bottom:8px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:12px;
+}
+
+.hero-side ul{
+    list-style:none;
+    display:grid;
+    gap:8px;
+}
+
+.hero-side li{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.09);
+    border-radius:14px;
+    padding:8px 10px;
+    color:#f3f5fc;
+    font-size:13px;
+}
+
+.hero-side strong{
+    color:var(--gold-light);
+}
+
+.hero-contact a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.hero-contact a:hover{
+    color:var(--gold-light);
+}
+
+.btn{
+    padding:16px 36px;
+    border-radius:50px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--gold),#fff3c2);
+    color:#111;
+    box-shadow:0 0 25px rgba(244,201,93,0.45);
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px) scale(1.03);
+    box-shadow:0 0 50px rgba(244,201,93,0.7);
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,0.35);
+    background:rgba(255,255,255,0.06);
+    color:white;
+    backdrop-filter:blur(10px);
+}
+
+.btn-secondary:hover{
+    background:white;
+    color:#111;
+    transform:translateY(-5px);
+}
+
+/* FLOATING LIGHT */
+
+.light{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.6);
+    filter:blur(10px);
+    animation:float 6s infinite ease-in-out;
+}
+
+.light1{
+    width:10px;
+    height:10px;
+    top:22%;
+    left:14%;
+}
+
+.light2{
+    width:14px;
+    height:14px;
+    top:60%;
+    right:18%;
+    animation-delay:2s;
+}
+
+.light3{
+    width:7px;
+    height:7px;
+    top:40%;
+    right:30%;
+    animation-delay:1s;
+}
+
+/* GENERAL */
+
+section{
+    padding:110px 7%;
+    position:relative;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-family:'Cinzel',serif;
+    font-size:52px;
+    color:white;
+    margin-bottom:18px;
+    text-shadow:0 0 20px rgba(244,201,93,0.25);
+}
+
+.section-title p{
+    max-width:800px;
+    margin:auto;
+    color:#cfd4e4;
+    line-height:1.9;
+}
+
+/* GLASS CARD */
+
+.glass{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(14px);
+    border-radius:28px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.35);
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:24px;
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.about-content{
+    padding:40px;
+}
+
+.about-content h3{
+    color:var(--gold);
+    margin-bottom:16px;
+    font-size:28px;
+}
+
+.about-content p{
+    color:#d7d9e3;
+    line-height:1.9;
+    margin-bottom:26px;
+}
+
+.about-cards{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+}
+
+.about-card{
+    padding:22px;
+    border-radius:20px;
+    background:linear-gradient(170deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 10px 26px rgba(0,0,0,0.28);
+    transition:0.35s ease;
+}
+
+.about-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(244,201,93,0.45);
+    box-shadow:0 16px 34px rgba(0,0,0,0.34);
+}
+
+.about-card h4{
+    color:var(--gold-light);
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.about-card p{
+    margin-bottom:0;
+    color:#dfe3f0;
+    font-size:15px;
+}
+
+.about-card ul{
+    margin:0;
+    padding-left:18px;
+    color:#dfe3f0;
+    line-height:1.9;
+}
+
+.about-card li::marker{
+    color:var(--gold);
+}
+
+.founders-card{
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:220px minmax(0,1fr);
+    gap:20px;
+    align-items:center;
+}
+
+.founders-card h4{
+    grid-column:1 / -1;
+    margin-bottom:0;
+}
+
+.founders-image{
+    width:100%;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    border-radius:18px;
+    border:1px solid rgba(244,201,93,0.35);
+    box-shadow:0 0 30px rgba(244,201,93,0.2);
+}
+
+.founders-text p{
+    margin:0;
+}
+
+/* GALLERY */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    border-radius:22px;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    min-height:260px;
+    object-fit:cover;
+    display:block;
+    transition:0.45s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+/* SERVICE CARDS */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    padding:40px 35px;
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.service-card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg, rgba(244,201,93,0.08), transparent);
+    opacity:0;
+    transition:0.4s;
+}
+
+.service-card:hover::before{
+    opacity:1;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    border:1px solid rgba(244,201,93,0.35);
+    box-shadow:0 0 45px rgba(244,201,93,0.12);
+}
+
+.service-card h3{
+    color:var(--gold);
+    margin-bottom:16px;
+    font-size:24px;
+}
+
+.service-card p{
+    color:#d8dceb;
+    line-height:1.8;
+}
+
+.service-time{
+    margin-top:18px;
+    font-weight:600;
+    color:white;
+}
+
+/* PROGRAMS */
+
+.program-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.program-card{
+    padding:40px;
+    transition:0.4s;
+}
+
+.program-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 40px rgba(255,255,255,0.08);
+}
+
+.program-card h3{
+    color:var(--gold);
+    margin-bottom:18px;
+    font-size:24px;
+}
+
+.program-card p{
+    line-height:1.8;
+    color:#d8dceb;
+}
+
+/* HUMANITARIAN */
+
+.impact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:28px;
+}
+
+.impact-card{
+    padding:35px;
+    border-left:4px solid var(--gold);
+}
+
+.impact-card h3{
+    margin-bottom:15px;
+    color:var(--gold);
+}
+
+.impact-card p{
+    color:#d8dceb;
+    line-height:1.8;
+}
+
+/* DONATE */
+
+.donate{
+    background:
+    linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.88)),
+    url('https://images.unsplash.com/photo-1469571486292-b53601020f18?q=80&w=2000&auto=format&fit=crop') center/cover;
+    text-align:center;
+    border-radius:40px;
+    overflow:hidden;
+}
+
+.donate-content{
+    max-width:850px;
+    margin:auto;
+}
+
+.donate h2{
+    font-family:'Cinzel',serif;
+    font-size:56px;
+    margin-bottom:24px;
+}
+
+.donate p{
+    color:#e1e4ef;
+    line-height:1.9;
+    margin-bottom:40px;
+    font-size:18px;
+}
+
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.contact-card{
+    padding:40px;
+}
+
+.contact-card h3{
+    color:var(--gold);
+    margin-bottom:18px;
+}
+
+.contact-card p{
+    color:#d8dceb;
+    line-height:1.9;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.08);
+    background:#01040d;
+}
+
+footer p{
+    color:#cdd3e5;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+        opacity:0.5;
+    }
+
+    50%{
+        transform:translateY(-20px);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(0px);
+        opacity:0.5;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .hero-layout{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+
+    .hero-content{
+        text-align:center;
+        max-width:100%;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .section-title h2{
+        font-size:40px;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .nav-links{
+        justify-content:center;
+        gap:16px;
+    }
+
+    .nav-links a.nav-donate{
+        margin-left:0;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    .about-cards{
+        grid-template-columns:1fr;
+    }
+
+    .founders-card{
+        grid-template-columns:1fr;
+    }
+
+    .founders-image{
+        max-width:260px;
+        margin:0 auto;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .hero-side{
+        padding:20px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="logo">
+    <img src="gallery/WhatsApp%20Image%202026-05-13%20at%202.20.59%20AM.jpeg" alt="Liberty IFM logo">
+    <span class="logo-text">Liberty IFM</span>
+</div>
+
+<div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#programs">Programs</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#outreach">Outreach</a>
+    <a href="#contact">Contact</a>
+    <a href="#donate" class="nav-donate">Donate</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="light light1"></div>
+<div class="light light2"></div>
+<div class="light light3"></div>
+
+<div class="hero-layout">
+
+<div class="hero-content">
+
+<div class="hero-sub">
+    Liberty House International Faith Ministries
+</div>
+
+<h1>
+    Walking In The Liberty Of Christ <br>
+    Transforming Lives & Nations
+</h1>
+
+<p>
+    A Christ-centered ministry in Awka, Anambra State Nigeria,
+    revealing the love, power and salvation of Jesus Christ through
+    worship, prayer, discipleship, evangelism and humanitarian outreach.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#services" class="btn btn-primary">
+    Join Our Services
+</a>
+
+<a href="#donate" class="btn btn-secondary">
+    Support The Mission
+</a>
+
+</div>
+
+</div>
+
+<aside class="hero-side glass">
+    <h3>Ministry Highlights</h3>
+
+    <div class="hero-side-block">
+        <div class="hero-side-title">Chain of Events</div>
+        <ul>
+            <li><strong>1.</strong> Praise & Worship</li>
+            <li><strong>2.</strong> Intercessory Prayer</li>
+            <li><strong>3.</strong> Word & Exhortation</li>
+            <li><strong>4.</strong> Healing & Deliverance</li>
+        </ul>
+    </div>
+
+    <div class="hero-side-block">
+        <div class="hero-side-title">Weekly Programs</div>
+        <ul>
+            <li><strong>Sun:</strong> Celebration Service — 9:00 AM</li>
+            <li><strong>Wed:</strong> Midweek Recharge — 5:30 PM</li>
+            <li><strong>Fri:</strong> Prayer Fire Night — 10:00 PM</li>
+        </ul>
+    </div>
+
+    <div class="hero-side-block hero-contact">
+        <div class="hero-side-title">Contact Details</div>
+        <ul>
+            <li><strong>Phone:</strong> <a href="tel:+2348000000000">+234 800 000 0000</a></li>
+            <li><strong>Email:</strong> <a href="mailto:info@libertyhouseifm.org">info@libertyhouseifm.org</a></li>
+            <li><strong>Location:</strong> Awka, Anambra State, Nigeria</li>
+        </ul>
+    </div>
+</aside>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-title">
+    <h2>About The Ministry</h2>
+
+    <p>
+        Liberty House International Faith Ministries exists to reveal the love,
+        liberty and transforming power of Jesus Christ through biblical truth,
+        fervent prayer, discipleship and compassionate humanitarian service.
+    </p>
+</div>
+
+<div class="about-grid">
+
+<div class="about-content glass">
+
+    <h3>Our Foundation</h3>
+
+    <div class="about-cards">
+
+        <article class="about-card founders-card">
+            <h4>Founders</h4>
+            <img class="founders-image" src="gallery/WhatsApp%20Image%202026-05-13%20at%202.20.58%20AM.jpeg" alt="Bishop Paul Nnamdi Ijeoma and Nelly-Praise Ijeoma">
+            <div class="founders-text">
+                <p>
+                    Liberty House International Faith Ministries is led by
+                    <strong>Bishop Paul Nnamdi Ijeoma</strong> and
+                    <strong>Nelly-Praise Ijeoma</strong>,
+                    devoted to preaching Christ and raising transformed lives.
+                </p>
+            </div>
+        </article>
+
+        <article class="about-card">
+            <h4>Mission</h4>
+            <p>
+                To reveal the love, power and salvation of Jesus Christ through
+                sound biblical teaching, fervent prayer, compassionate outreach
+                and transformational discipleship.
+            </p>
+        </article>
+
+        <article class="about-card">
+            <h4>Vision</h4>
+            <p>
+                To raise a generation rooted in faith, walking in the liberty
+                of Christ and impacting nations through evangelism, holiness,
+                love and humanitarian service.
+            </p>
+        </article>
+
+        <article class="about-card">
+            <h4>Core Emphasis</h4>
+            <ul>
+                <li>Prayer, worship and the Word</li>
+                <li>Family and youth discipleship</li>
+                <li>Evangelism and community impact</li>
+            </ul>
+        </article>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="section-title">
+
+<h2>Weekly Services</h2>
+
+<p>
+    Join us physically in Awka or online globally for powerful worship,
+    prayer, healing, biblical teaching and fellowship.
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<div class="service-card glass">
+
+<h3>Sunday Worship</h3>
+
+<p>
+Spirit-filled worship, life-transforming preaching,
+prayer, healing and fellowship.
+</p>
+
+<div class="service-time">
+9:00 AM — 11:30 AM
+</div>
+
+</div>
+
+<div class="service-card glass">
+
+<h3>Wednesday Midweek</h3>
+
+<p>
+Bible teaching, spiritual empowerment,
+prayer sessions and Christian growth.
+</p>
+
+<div class="service-time">
+5:30 PM — 7:00 PM
+</div>
+
+</div>
+
+<div class="service-card glass">
+
+<h3>Thursday Counseling</h3>
+
+<p>
+Personal counseling, encouragement,
+spiritual guidance and prayer support.
+</p>
+
+<div class="service-time">
+4:00 PM — 6:00 PM
+</div>
+
+</div>
+
+<div class="service-card glass">
+
+<h3>Online Fellowship</h3>
+
+<p>
+Connect through Facebook Live,
+YouTube streaming and digital ministry outreach.
+</p>
+
+<div class="service-time">
+Global Online Worship
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROGRAMS -->
+
+<section id="programs">
+
+<div class="section-title">
+
+<h2>Ministry Programs</h2>
+
+<p>
+Empowering believers spiritually while transforming communities practically.
+</p>
+
+</div>
+
+<div class="program-grid">
+
+<div class="program-card glass">
+
+<h3>Bible Study</h3>
+
+<p>
+Structured biblical teaching helping believers understand scripture,
+grow spiritually and develop victorious Christian living.
+</p>
+
+</div>
+
+<div class="program-card glass">
+
+<h3>Evangelism Outreach</h3>
+
+<p>
+Crusades, missions, online evangelism and community outreach
+spreading the Gospel of Jesus Christ.
+</p>
+
+</div>
+
+<div class="program-card glass">
+
+<h3>Youth & Family Ministry</h3>
+
+<p>
+Mentorship and discipleship programs designed to raise
+strong families and spiritually empowered youth.
+</p>
+
+</div>
+
+<div class="program-card glass">
+
+<h3>Prayer & Counseling</h3>
+
+<p>
+Spiritual guidance, counseling, encouragement
+and healing prayer for individuals and families.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="section-title">
+
+<h2>Ministry Gallery</h2>
+
+<p>
+Highlights from worship moments, fellowship and ministry life at Liberty House IFM.
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item glass">
+    <img src="gallery/WhatsApp%20Image%202026-05-13%20at%202.13.51%20AM.jpeg" alt="Liberty IFM worship moment">
+</div>
+
+<div class="gallery-item glass">
+    <img src="gallery/WhatsApp%20Image%202026-05-13%20at%202.20.58%20AM.jpeg" alt="Ministry fellowship gathering">
+</div>
+
+<div class="gallery-item glass">
+    <img src="gallery/WhatsApp%20Image%202026-05-13%20at%202.20.59%20AM%20%281%29.jpeg" alt="Church outreach highlight">
+</div>
+
+<div class="gallery-item glass">
+    <img src="gallery/WhatsApp%20Image%202026-05-13%20at%202.19.06%20AM.jpeg" alt="Founder family portrait">
+</div>
+
+</div>
+
+</section>
+
+<!-- OUTREACH -->
+
+<section id="outreach">
+
+<div class="section-title">
+
+<h2>Humanitarian Outreach</h2>
+
+<p>
+Demonstrating the love of Jesus Christ through compassion,
+community support and transformational service.
+</p>
+
+</div>
+
+<div class="impact-grid">
+
+<div class="impact-card glass">
+
+<h3>Food Support</h3>
+
+<p>
+Providing meals, groceries and practical support
+to vulnerable individuals and families.
+</p>
+
+</div>
+
+<div class="impact-card glass">
+
+<h3>Widows & Orphans</h3>
+
+<p>
+Supporting widows and children through care initiatives,
+empowerment and educational assistance.
+</p>
+
+</div>
+
+<div class="impact-card glass">
+
+<h3>Medical Assistance</h3>
+
+<p>
+Community health outreach and compassionate support
+for people facing medical challenges.
+</p>
+
+</div>
+
+<div class="impact-card glass">
+
+<h3>Community Development</h3>
+
+<p>
+Faith-driven transformation initiatives empowering
+communities spiritually and socially.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DONATE -->
+
+<section id="donate">
+
+<div class="donate glass">
+
+<div class="donate-content">
+
+<h2>Support The Mission</h2>
+
+<p>
+Your support helps us spread the Gospel,
+feed vulnerable families, support humanitarian outreach,
+raise disciples and transform lives through the love of Jesus Christ.
+</p>
+
+<a href="#" class="btn btn-primary">
+Donate Now
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+
+<h2>Contact & Fellowship</h2>
+
+<p>
+We would love to worship, pray and fellowship with you.
+</p>
+
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-card glass">
+
+<h3>Church Address</h3>
+
+<p>
+Liberty House International Faith Ministries<br><br>
+
+Awka, Anambra State<br>
+Nigeria
+</p>
+
+</div>
+
+<div class="contact-card glass">
+
+<h3>Service Schedule</h3>
+
+<p>
+Sunday Worship Service<br>
+9:00 AM — 11:30 AM<br><br>
+
+Wednesday Midweek Service<br>
+5:30 PM — 7:00 PM<br><br>
+
+Thursday Counseling & Prayer<br>
+4:00 PM — 6:00 PM
+</p>
+
+</div>
+
+<div class="contact-card glass">
+
+<h3>Online Worship</h3>
+
+<p>
+Join our online fellowship through YouTube Live,
+Facebook Live and digital ministry platforms globally.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Liberty House International Faith Ministries —
+Awka, Anambra State Nigeria
+</p>
+
+</footer>
+
+</body>
+</html>
